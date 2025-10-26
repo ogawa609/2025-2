@@ -11,7 +11,7 @@ tEleicao InicializaEleicao(){
     eleicao.votosBrancosGovernador=0;
     eleicao.totalEleitores=0;
     eleicao.totalGovernadores=0;
-    eleicao.votosBrancosGovernador=0;
+   
     
     int totalcandidatos;
     tCandidato temp;
@@ -57,7 +57,7 @@ tEleicao RealizaEleicao(tEleicao eleicao){
 
                 
 
-                if(EhMesmoEleitor(temp,eleicao.eleitores[i])){
+                if(EhMesmoEleitor(temp,eleicao.eleitores[j])){
 
                     
                     confirma=0;
