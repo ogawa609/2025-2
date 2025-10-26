@@ -183,13 +183,40 @@ int g=0;
 
     else if(eleicao.presidentes[p].votos<eleicao.votosBrancosPresidente+eleicao.votosNulosPresidente){
 
-        printf("PRESIDENTE ELEITO: SEM DECISAO\n");
+        printf("- PRESIDENTE ELEITO: SEM DECISAO\n");
 
+    }
+
+    else if(empateP){
+
+        printf("- PRESIDENTE ELEITO: EMPATE. SERA  NECESSARIA UMA NOVA VOTACAO\n");
+        
     }
 
     else{
 
-        
+        printf("- PRESIDENTE ELEITO: ");
+        ImprimeCandidato(eleicao.presidentes[p],CalculaPercentualVotos(eleicao.presidentes[p],eleicao.totalEleitores));
     }
+
+    if(eleicao.governadores[g].votos<eleicao.votosBrancosGovernador+eleicao.votosNulosGovernador){
+
+        printf("- GOVERNADOR ELEITO: SEM DECISAO\n");
+    }
+
+    else if(empateG){
+
+         printf("- GOVERNADOR ELEITO: EMPATE. SERA  NECESSARIA UMA NOVA VOTACAO\n");
+    }
+
+    else{
+
+         printf("- GOVERNADOR ELEITO: ");
+        ImprimeCandidato(eleicao.governadores[g],CalculaPercentualVotos(eleicao.governadores[g],eleicao.totalEleitores));
+    }
+
+    printf("- NULOS E BRANCOS: %d, %d",eleicao.votosNulosGovernador+eleicao.votosNulosPresidente,eleicao.votosNulosGovernador+eleicao.votosNulosPresidente);
+
+    return 0;
 
 }
